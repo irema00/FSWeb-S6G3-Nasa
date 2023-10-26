@@ -1,15 +1,22 @@
 import React from "react";
+import ImageDisplay from "./ImageDisplay";
 
-import Apod from "./Apod";
-
+import Input from "./Input";
 const ApodCard = (props) => {
-  const { image, description } = props;
+  const { apodData, apodType, inputChange, date } = props;
 
   return (
-    <div className="image-container">
-      <div className="image">{/* image link çekilecek */}</div>
-      <div className="description">{/* description çekilecek */}</div>
-    </div>
+    <>
+      <div className="image-container">
+        <div className="image">
+          <ImageDisplay apodData={apodData} apodType={apodType} />
+        </div>
+        <div className="description">{apodData.description}</div>
+      </div>
+      <div className="Input">
+        <Input date={date} inputChange={inputChange} />
+      </div>
+    </>
   );
 };
 
