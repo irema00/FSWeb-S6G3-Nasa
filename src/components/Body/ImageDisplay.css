@@ -1,0 +1,6 @@
+.image {
+  height: auto;
+  width: 600px;
+  border: solid 10px;
+  border-color: black;
+}
