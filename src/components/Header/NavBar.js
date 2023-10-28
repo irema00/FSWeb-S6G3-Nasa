@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = styled.div`
+  width: 100%;
   border-bottom: 1px solid #3333;
   height: 8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: light-gray;
+  background-image: url("https://apod.nasa.gov/apod/image/2307/MandelWilson9_GabrielRodriguesSantos_APOD1024.jpg");
 `;
 
 const Button = styled.button`
@@ -30,18 +31,6 @@ const Button = styled.button`
   -webkit-user-select: none;
   touch-action: manipulation;
 `;
-
-// .btn:active {
-//   box-shadow: 0px 0px 0px 0px;
-//   top: 5px;
-//   left: 5px;
-// }
-
-// @media (min-width: 768px) {
-//   .btn {
-//     padding: 0.25em 0.75em;
-//   }
-// }
 
 const Container = styled.div``;
 const NavBtn = styled.div`
@@ -67,28 +56,12 @@ const Input = styled.input`
   font-family: "Open Sans", sans-serif;
 `;
 const Img = styled.img`
-  width: 10%;
-  padding: 1rem;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px;
-  border: 3px solid;
-  flex-direction: row;
+  width: 12%;
   margin-right: 1rem;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
   cursor: pointer;
   border: 3px solid;
-  padding: 0.25em 0.5em;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
     5px 5px 0px 0px;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 `;
 
 function NavBar() {

@@ -2,8 +2,9 @@ import React from "react";
 import ImageDisplay from "./ImageDisplay";
 import DescriptionDisplay from "./DescriptionDisplay";
 import TitleDisplay from "./TitleDisplay";
-
+import styled from "styled-components";
 import Input from "./Input";
+
 const ApodCard = (props) => {
   const {
     apodData,
