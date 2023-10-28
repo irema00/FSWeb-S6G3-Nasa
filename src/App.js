@@ -3,6 +3,7 @@ import axios from "axios";
 import NavBar from "./components/Header/NavBar";
 import ApodCard from "./components/Body/ApodCard";
 import Footer from "./components/Footer/Footer";
+import styled from "styled-components";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const [apodType, setApodType] = useState([]);
   const [explanation, setExplanation] = useState([]);
   const [copyright, setCopyright] = useState([]);
-  const [apodTitle, setApodTitle] = useState([]);
+  const [title, settitle] = useState([]);
 
   const [inputValue, setInputValue] = useState("");
 
@@ -29,7 +30,9 @@ function App() {
         setApodType(response.data.media_type);
         setExplanation(response.data.explanation);
         setCopyright(response.data.copyright);
-        setApodTitle(response.data.apodTitle);
+        settitle(response.data.title);
+
+        console.log("buradayım", response.data.title);
       })
       .catch((error) => {
         console.error("Error fetching APOD data: ", error);
@@ -45,7 +48,7 @@ function App() {
         apodType={apodType}
         explanation={explanation}
         inputChange={inputChange}
-        apodTitle={apodTitle}
+        title={title}
       />
       <Footer />
     </div>

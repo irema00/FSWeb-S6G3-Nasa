@@ -1,17 +1,114 @@
 import React from "react";
+import styled from "styled-components";
 
-import "./NavBar.css";
+const Header = styled.div`
+  border-bottom: 1px solid #3333;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: light-gray;
+`;
+
+const Button = styled.button`
+  flex-direction: row;
+  margin-right: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+`;
+
+// .btn:active {
+//   box-shadow: 0px 0px 0px 0px;
+//   top: 5px;
+//   left: 5px;
+// }
+
+// @media (min-width: 768px) {
+//   .btn {
+//     padding: 0.25em 0.75em;
+//   }
+// }
+
+const Container = styled.div``;
+const NavBtn = styled.div`
+  padding-left: 1rem;
+  justify-content: center;
+`;
+const SearchBar = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Container2 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+const Input = styled.input`
+  padding: 0.25em 0.5em;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: light-gray;
+  font-family: "Open Sans", sans-serif;
+`;
+const Img = styled.img`
+  width: 10%;
+  padding: 1rem;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  border: 3px solid;
+  flex-direction: row;
+  margin-right: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+`;
+
 function NavBar() {
   return (
-    <div className="search-bar-wrapper">
-      <div className="social"></div>
-      <form className="search-form"></form>
-      <div className="social-wrapper">
-        <div className="social"></div>
-        <div className="social"></div>
-        <div className="social"></div>
-      </div>
-    </div>
+    <Header>
+      <Container>
+        <NavBtn>
+          <Button> Home </Button>
+          <Button> About </Button>
+          <Button> Explore Mars</Button>
+        </NavBtn>
+      </Container>
+      <SearchBar>
+        <Input type="text" placeholder="Search" />
+      </SearchBar>
+      <Container2>
+        {" "}
+        <Img src="https://logowik.com/content/uploads/images/158_nasa.jpg" />
+      </Container2>
+    </Header>
   );
 }
 

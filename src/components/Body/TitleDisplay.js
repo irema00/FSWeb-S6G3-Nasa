@@ -1,13 +1,14 @@
 import React from "react";
 
-function DescriptionDisplay({ explanation }) {
+function TitleDisplay({ title }) {
   return (
     <div className="description-container">
       <div className="description">
-        <p>{explanation}</p>
+        {" "}
+        <h1>{title}</h1>
       </div>
     </div>
   );
 }
 
-export default DescriptionDisplay;
+export default TitleDisplay;
