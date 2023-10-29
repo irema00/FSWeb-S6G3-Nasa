@@ -15,7 +15,7 @@ const Title = styled.h3`
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   justify-content: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 `;
 const ContentContainer = styled.h2`
   display: flex;
