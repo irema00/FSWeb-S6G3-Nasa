@@ -1,30 +1,40 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import styled from "styled-components";
 
-function ImageDisplay({ apodData, apodType, copyright }) {
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
+const Image = styled.img`
+  width: 80%;
+  max-height: 90vh;
+  padding-left: 5.5rem;
+  margin-right: 20rem;
+`;
+
+const Credit = styled.div`
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+`;
+function ImageDisplay({ apodData, apodType, copyright, data }) {
   if (apodType === "image") {
     return (
-      <div className="img-container">
-        <img className="img" src={apodData} alt="nasa" />
-        <div className="copyright container">
-          <div className="copyright">
-            {" "}
-            <p>Image Credit & Copyright: {copyright}</p>
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Image src={apodData} alt="nasa" />
+        <Credit>Image Credit & Copyright: {copyright}</Credit>
+      </Container>
     );
-  } else if (apodType === "video") {
+  } else if (apodType === "video" && data && data.video) {
     return (
       <>
-        <div>
-          <ReactPlayer url={apodData.video} />
-        </div>
-        <div className="copyright container">
-          <div className="copyright">
-            <p>Image Credit & Copyright:{copyright}</p>
-          </div>
-        </div>
+        <Container>
+          <ReactPlayer url={apodData} controls={true} />
+          <Credit>Image Credit & Copyright: {copyright}</Credit>
+        </Container>
       </>
     );
   }

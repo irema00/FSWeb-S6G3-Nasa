@@ -6,6 +6,11 @@ import Footer from "./components/Footer/Footer";
 import styled from "styled-components";
 import "./App.css";
 
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 function App() {
   const [apodData, setApodData] = useState([]);
   const [apodType, setApodType] = useState([]);
@@ -40,18 +45,20 @@ function App() {
   }, [inputValue]);
 
   return (
-    <div>
-      <NavBar />
-      <ApodCard
-        apodData={apodData}
-        copyright={copyright}
-        apodType={apodType}
-        explanation={explanation}
-        inputChange={inputChange}
-        title={title}
-      />
-      <Footer />
-    </div>
+    <>
+      <Container>
+        <NavBar apodData={apodData} />
+        <ApodCard
+          apodData={apodData}
+          copyright={copyright}
+          apodType={apodType}
+          explanation={explanation}
+          inputChange={inputChange}
+          title={title}
+        />
+        <Footer />
+      </Container>
+    </>
   );
 }
 

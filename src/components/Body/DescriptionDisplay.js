@@ -1,12 +1,22 @@
 import React from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+const Description = styled.div`
+  font-family: monospace;
+`;
 
 function DescriptionDisplay({ explanation }) {
   return (
-    <div className="description-container">
-      <div className="description">
-        <p>{explanation}</p>
-      </div>
-    </div>
+    <Container>
+      <Description>{explanation}</Description>
+    </Container>
   );
 }
 
