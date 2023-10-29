@@ -6,59 +6,58 @@ import styled from "styled-components";
 import Input from "./Input";
 
 const CardContainer = styled.div`
-  display: flex;
-  height: 100vh;
-  background-color: lightgoldenrodyellow;
+  height: 100%;
   width: 100%;
-  border-bottom: 1px solid #3333;
   display: flex;
-  flex-direction: column;
 `;
-const Title = styled.h2`
+const Title = styled.h3`
+  display: flex;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 4rem;
 `;
-const HeaderContainer = styled.div`
-  background-color: purple;
-  display: flex;
-
-  align-content: center;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: absolute;
-  bottom: 0;
-  margin-top: 0;
-`;
-
-const InputContainer = styled.div`
-  background-color: lightseagreen;
-  padding-top: 0.3rem;
-  padding-left: 0.3rem;
-
-  bottom: 0;
-`;
-
 const ContentContainer = styled.h2`
   display: flex;
-  margin-top: 3rem;
-  background-color: lightcoral;
-  position: absolute;
+  margin-right: 2rem;
+  margin-left: 3rem;
+  background-color: white;
+  max-width: 700px;
+  font-family: Arial, Helvetica, sans-serif;
 `;
-
+const InputContainer = styled.div`
+  margin-left: 1rem;
+  margin-top: 2em;
+  border: solid 2px;
+`;
 const ImgContainer = styled.div`
-  height: auto;
-  background-color: orange;
   display: flex;
-  padding-top: 2rem;
-  flex-direction: row;
+  justify-content: center;
+  text-align: right;
+  font-style: italic;
+  margin-top: 6rem;
+  max-width: 900px;
+  max-height: 900px;
+  margin-bottom: 5rem;
+`;
+const DescriptionContainer = styled.div`
+  max-width: 450px;
+  overflow: auto;
+  font-size: 13px;
+  margin-left: 4rem;
+  margin-right: 4rem;
 `;
 
-const DescriptionContainer = styled.div`
-  background-color: lightblue;
+const Column = styled.div`
   display: flex;
-  width: 25rem;
-  height: 12rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+const Column2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const ApodCard = (props) => {
@@ -75,16 +74,13 @@ const ApodCard = (props) => {
   return (
     <>
       <CardContainer>
-        {" "}
-        <ContentContainer>
-          <TitleDisplay title={title} />{" "}
-        </ContentContainer>{" "}
-        <InputContainer>
-          <Input date={date} inputChange={inputChange} />
-          <HeaderContainer>
-            <Title>THE ASTRONOMICAL PICTURE OF THE DAY</Title>{" "}
-          </HeaderContainer>
-        </InputContainer>
+        <Column>
+          <InputContainer>
+            <Input date={date} inputChange={inputChange} />
+          </InputContainer>
+
+          <Title>THE ASTRONOMICAL PICTURE OF THE DAY</Title>
+        </Column>{" "}
         <ImgContainer>
           {" "}
           <ImageDisplay
@@ -92,10 +88,16 @@ const ApodCard = (props) => {
             apodType={apodType}
             copyright={copyright}
           />
+        </ImgContainer>{" "}
+        <Column2>
+          {" "}
+          <ContentContainer>
+            <TitleDisplay title={title} />
+          </ContentContainer>
           <DescriptionContainer>
             <DescriptionDisplay explanation={explanation} />
           </DescriptionContainer>
-        </ImgContainer>{" "}
+        </Column2>
       </CardContainer>
     </>
   );

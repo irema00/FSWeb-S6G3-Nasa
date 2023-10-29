@@ -2,24 +2,14 @@ import React from "react";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-`;
+const Container = styled.div``;
 
 const Image = styled.img`
-  width: 80%;
-  max-height: 90vh;
-  padding-left: 5.5rem;
-  margin-right: 20rem;
+  width: 100%;
+  height: 100%;
 `;
 
-const Credit = styled.div`
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-`;
+const Credit = styled.div``;
 function ImageDisplay({ apodData, apodType, copyright, data }) {
   if (apodType === "image") {
     return (
